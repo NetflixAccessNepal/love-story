@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Story</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fbc2eb, #a6c1ee);
+      overflow: hidden;
+    }
+    .story {
+      text-align: center;
+      padding: 50px;
+    }
+    .character {
+      width: 100px;
+      position: absolute;
+      animation: move 8s linear infinite;
+    }
+    .boy {
+      bottom: 100px;
+      left: 0;
+    }
+    .girl {
+      bottom: 100px;
+      right: 0;
+    }
+    @keyframes move {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(-50px);
+      }
+    }
+    .heart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 100px;
+      opacity: 0;
+      animation: fade 4s ease-in-out infinite;
+    }
+    @keyframes fade {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    .happy-ending {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="story">
+    <img src="boy.png" class="character boy" alt="Boy">
+    <img src="girl.png" class="character girl" alt="Girl">
+    <div class="heart">❤️</div>
+    <div class="happy-ending">And they lived happily ever after! 💖</div>
+  </div>
+
+  <script>
+    // Show the happy ending after a delay
+    setTimeout(() => {
+      document.querySelector('.happy-ending').style.display = 'block';
+    }, 8000); // 8 seconds
+  </script>
+</body>
+</html>
